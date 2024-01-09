@@ -3,15 +3,19 @@
 #reader(lib "htdp-beginner-reader.ss" "lang")((modname notes) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 ;#lang racket
 
-(require htdp/image)
+;; Number -> Number
+;; produces two times the given number
 
-(define RADIUS 100)
-
-(define (create_circle c r) 
-  (circle r "solid" c))
+;; stub
+;;(define (double n) 0)
 
 
-(overlay (create_circle "blue" RADIUS)
-         (create_circle "green" (* RADIUS 0.75))
-         (create_circle "red" (* RADIUS 0.5))
-         (create_circle "yellow" (* RADIUS 0.25)))
+(check-expect (double 3) (* 2 3))
+(check-expect (double 2.5) (* 2 2.5))
+(check-expect (double -2) (* 2 -2))
+
+;; template
+;(define (double n) (... n))
+
+(define (double n)
+  (* 2 n))
